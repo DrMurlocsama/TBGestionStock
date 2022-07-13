@@ -1,0 +1,13 @@
+﻿@model TBGestionStock.ASP.Models.ProduitDeleteVM
+
+*@@{
+    ViewData["Title"] = "Confirmation";
+}
+
+<h1>Confirmation</h1>
+
+<h3>Etes vous certain de vouloir supprimer le produit @Model.Name</h3>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Retourner en arriere</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Supprimer le produit</a>
+</div>

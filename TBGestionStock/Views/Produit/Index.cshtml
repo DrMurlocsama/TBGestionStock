@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TBGestionStock.ASP.Models.ProduitIndexVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tableaux des Produits</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reference)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-controller="Produit" asp-action="Modification" asp-route-id="@item.Id">Edit</a>
+                <a asp-controller="Produit" asp-action="Confirmation" asp-route-id="@item.Id">X</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
